@@ -1,1 +1,64 @@
-<p>details works!</p>
+<div style="width: 400px; margin: auto;">
+  <div *ngIf="currentusers" class="edit-form">
+    <h4>users</h4>
+    <form>
+      <div class="form-group">
+        <label for="id">Id</label>
+        <input
+          type="text"
+          class="form-control"
+          id="id"
+
+          [(ngModel)]="currentusers.id"
+          name="id"
+        />
+      </div>
+      <div class="form-group">
+        <label for="fname">First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="fname"
+
+          [(ngModel)]="currentusers.first_name"
+          name="fname"
+        />
+      </div>
+      <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lname"
+          [(ngModel)]="currentusers.last_name"
+          name="lname"
+        />
+      </div>
+
+
+
+    </form>
+
+    <button class="badge badge-danger mr-2" (click)="deleteusers()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success"
+      (click)="updateusers()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+
+    <br>
+
+    <p>{{resp}}</p>
+  </div>
+
+  <div *ngIf="!currentusers">
+    <br />
+    <p>Cannot access this users...</p>
+  </div>
+</div>

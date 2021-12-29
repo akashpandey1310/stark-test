@@ -7,13 +7,15 @@ import { AddComponent } from './add/add.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DetailsComponent } from './details/details.component'
 import { BearerService } from './service/bearer.service';
+import { ListComponent } from './list/list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AddComponent,
-    DetailsComponent
+    DetailsComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

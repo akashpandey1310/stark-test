@@ -19,8 +19,12 @@ export class TestServiceService {
     return this.http.get(baseUrl)
   }
 
+  get(id:any): Observable<any> {
+    return this.http.get(`${baseUrl}/${id}`);
+  }
+
   delete(id:any):Observable<any> {
-    return this.http.delete(`baseUrl/${id}`)
+    return this.http.delete(`${baseUrl}/${id}`);
   }
 
   update(id: any, data: any): Observable<any> {

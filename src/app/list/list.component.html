@@ -1,0 +1,40 @@
+<div class="list row">
+
+  <div class="col-md-6">
+    <h4>Users List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let users of userss; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveusers(users, i)"
+      >
+        {{ users.first_name }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentusers">
+      <h4>users</h4>
+      <div>
+        <label><strong>Id:</strong></label> {{ currentusers.id }}
+      </div>
+      <div>
+        <label><strong>First Name:</strong></label> {{ currentusers.first_name }}
+      </div>
+      <div>
+        <label><strong>Last Name:</strong></label>
+        {{ currentusers.last_name }}
+      </div>
+
+      <a class="badge badge-warning" routerLink="/users/{{ currentusers.id }}">
+        Edit
+      </a>
+    </div>
+
+    <div *ngIf="!currentusers">
+      <br />
+      <p>Please click on a users...</p>
+    </div>
+  </div>
+</div>
